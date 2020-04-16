@@ -10,7 +10,7 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new RelativePage();
+            MainPage = new ImagePage();
         }
 
         protected override void OnStart()
