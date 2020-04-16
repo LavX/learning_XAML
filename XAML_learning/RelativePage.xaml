@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Padding="0,20,0,0"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.RelativePage">
+    <RelativeLayout>
+        <BoxView Color="Black" x:Name="Banner"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Height,
+                    Factor=0.3}"
+                 />
+        <BoxView Color="Sienna"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=Banner,
+                    Property=Width,
+                    Factor=0.3,
+                    Constant=0}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=Banner,
+                    Property=Height,
+                    Factor=0.3,
+                    Constant=0}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=Banner,
+                    Property=Height,
+                    Factor=1,
+                    Constant=-20}" 
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=Banner,
+                    Property=Width,
+                    Factor=0.5,
+                    Constant=0}" 
+                 />
+        
+    </RelativeLayout>
+</ContentPage>
