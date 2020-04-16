@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.QuotePage">
+    <ContentPage.Content>
+        <StackLayout
+                BindingContext="{x:Reference slider}"
+                HorizontalOptions="Center" Padding="50,0"
+            >
+            <Button 
+                Text="Next"
+                Pressed="Button_Pressed"
+                
+                />
+            <Label 
+                Text="{Binding Value,
+                StringFormat='Font Size: {0:F0} px'}" 
+                />
+            <Slider 
+                x:Name="slider"
+                Maximum="48"
+                Minimum="16"
+                    />
+            <Label 
+                x:Name="quote"
+                Text=""
+                FontSize="{Binding Value}" 
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
