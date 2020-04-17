@@ -11,10 +11,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\NewFolder\**" />
+    <EmbeddedResource Remove="Images\NewFolder\**" />
+    <None Remove="Images\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Icons\icons8-arrow-pointing-left-50.png" />
+    <None Remove="Images\Icons\icons8-right-arrow-50.png" />
     <None Remove="Images\signage.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Icons\icons8-arrow-pointing-left-50.png" />
+    <EmbeddedResource Include="Images\Icons\icons8-right-arrow-50.png" />
     <EmbeddedResource Include="Images\signage.png" />
   </ItemGroup>
 
@@ -26,6 +36,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="AbsolutePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GalleryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="GridPage.xaml">

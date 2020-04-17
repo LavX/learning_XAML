@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.GalleryPage"
+             xmlns:local="clr-namespace:XAML_learning.MarkupExtensions">
+    
+    <StackLayout BackgroundColor="Black">
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center">
+            <Button BackgroundColor="Black" 
+                    ImageSource="{local:EmbeddedImage XAML_learning.Images.Icons.icons8-arrow-pointing-left-50.png}"
+                    WidthRequest="160"
+                    HeightRequest="160"
+                    Pressed="Button_Pressed_Back"
+                    
+                    />
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference GalleryPicture}, Path=IsLoading}"
+                               Color="White"
+                               WidthRequest="80"
+                               HeightRequest="80"
+                               />
+            <Button BackgroundColor="Black" 
+                    ImageSource="{local:EmbeddedImage XAML_learning.Images.Icons.icons8-right-arrow-50.png}"
+                    WidthRequest="160"
+                    HeightRequest="160"
+                    Pressed="Button_Pressed_Next"
+                    />
+        </StackLayout>
+        <Image x:Name="GalleryPicture" 
+               Aspect="AspectFit"
+               HorizontalOptions="Center"
+               />
+    </StackLayout>
+</ContentPage>

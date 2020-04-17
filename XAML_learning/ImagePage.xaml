@@ -18,7 +18,7 @@
                AbsoluteLayout.LayoutFlags="All"
                />
         <Image x:Name="LogoImage" 
-               AbsoluteLayout.LayoutBounds="0.5,0.1,50,50" 
+               AbsoluteLayout.LayoutBounds="0.5,0.1,150,150" 
                AbsoluteLayout.LayoutFlags="PositionProportional"
                />
         <Image x:Name="ServiceImage"
