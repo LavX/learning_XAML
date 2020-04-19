@@ -5,14 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XAML_learning.ListPage">
-    <ListView x:Name="NameList" 
+    <!--     <ListView x:Name="NameList" 
               HasUnevenRows="True"
               IsGroupingEnabled="True"
               GroupDisplayBinding="{Binding Title}"
-              GroupShortNameBinding="{Binding ShortTitle}">
+              GroupShortNameBinding="{Binding ShortTitle}"
+              ItemTapped="NameList_ItemTapped"
+              ItemSelected="NameList_ItemSelected">
+        -->
+    <ListView x:Name="NameList" 
+              HasUnevenRows="True"
+              IsGroupingEnabled="False"
+              >
         <ListView.ItemTemplate>
             <DataTemplate>
- <!--               <ImageCell ImageSource="{Binding ImageUrl}" Text="{Binding Name}" Detail="{Binding Status}" DetailColor="Accent"/>-->
+ <!--               <ImageCell ImageSource="{Binding ImageUrl}" Text="{Binding Name}" Detail="{Binding Status}" DetailColor="Accent"/>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="5">
                         <Image Source="{Binding ImageUrl}"/>
@@ -23,6 +30,13 @@
                         <Button Text="Follow" />
                     </StackLayout>
                 </ViewCell>
+-->
+                <TextCell Text="{Binding Name}" Detail="{Binding Status}">
+                    <TextCell.ContextActions>
+                        <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                    </TextCell.ContextActions>
+                </TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
