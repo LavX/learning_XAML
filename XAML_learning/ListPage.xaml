@@ -13,9 +13,13 @@
               ItemTapped="NameList_ItemTapped"
               ItemSelected="NameList_ItemSelected">
         -->
-    <ListView x:Name="NameList" 
+<StackLayout>
+        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+        <ListView x:Name="NameList" 
               HasUnevenRows="True"
               IsGroupingEnabled="False"
+              IsPullToRefreshEnabled="True"
+              Refreshing="NameList_Refreshing"
               >
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -33,11 +37,13 @@
 -->
                 <TextCell Text="{Binding Name}" Detail="{Binding Status}">
                     <TextCell.ContextActions>
-                        <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                        <!--<MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
                         <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                        -->
                     </TextCell.ContextActions>
                 </TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+</StackLayout>
 </ContentPage>
