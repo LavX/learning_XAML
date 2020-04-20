@@ -10,7 +10,7 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new ListPage();
+            MainPage = new RecentSearchesList();
         }
 
         protected override void OnStart()

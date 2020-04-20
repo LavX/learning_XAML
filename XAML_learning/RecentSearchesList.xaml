@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.RecentSearchesList">
+    <StackLayout Padding="0,40,0,0">
+        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+        <Label Text="Recent Searches" FontAttributes="Bold" FontSize="Title" TextColor="Black" Padding="20,0,0,0"/>
+        <ListView x:Name="RecentSearches" 
+                  HasUnevenRows="True"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="RecentSearches_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!-- <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Location}" FontAttributes="Bold" FontSize="Title" TextColor="Black"/>
+                            <Label Text="{Binding Duration}" FontSize="Small" TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell>-->
+                    <TextCell Text="{Binding Location}" Detail="{Binding Duration}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
