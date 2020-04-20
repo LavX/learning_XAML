@@ -10,7 +10,11 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new RecentSearchesList();
+            MainPage = new NavigationPage (new HierarchicalNavigation.WelcomePage())
+            { 
+                BarBackgroundColor = Color.Gray,
+                BarTextColor = Color.White
+            };
         }
 
         protected override void OnStart()
