@@ -10,7 +10,7 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage (new HierarchicalNavigation.WelcomePage())
+            MainPage = new NavigationPage (new MasterDetail.ContactsPage())
             { 
                 BarBackgroundColor = Color.Gray,
                 BarTextColor = Color.White

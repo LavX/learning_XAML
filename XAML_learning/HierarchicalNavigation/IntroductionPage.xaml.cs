@@ -19,7 +19,8 @@ namespace XAML_learning.HierarchicalNavigation
 
         async private void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            //await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
         protected override bool OnBackButtonPressed()
         {
