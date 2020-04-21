@@ -10,11 +10,8 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage (new MasterDetail.ContactsPage())
-            { 
-                BarBackgroundColor = Color.Gray,
-                BarTextColor = Color.White
-            };
+            //MainPage = new NavigationPage (new MasterDetailPage.ContactsPage())
+            MainPage = new MasterDetailPages.ContactsPage();
         }
 
         protected override void OnStart()
