@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="ProfileTitle"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.InstagramApp.UserPage">
+    <StackLayout HorizontalOptions="Start">
+        <Label x:Name="FullName" Text="{Binding firstName}" FontAttributes="Bold" FontSize="Title" TextColor="Black"/>
+        <Frame CornerRadius="100" 
+               HeightRequest="100"
+               WidthRequest="100"
+               HorizontalOptions="Center"
+               Padding="0"
+               IsClippedToBounds="True">
+            <Image Source="{Binding Avatar}"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill" 
+                   Aspect="AspectFill"/>
+        </Frame>
+        <Label x:Name="Description" Text="{Binding nickName}" FontSize="Caption" TextColor="Gray" />
+    </StackLayout>
+</ContentPage>

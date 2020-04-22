@@ -1,0 +1,40 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.InstagramApp.InstaFeed"
+             Padding="20">
+    <StackLayout>
+        <ListView x:Name="FeedList" 
+              HasUnevenRows="True"
+                  ItemSelected="FeedList_ItemSelected"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="FeedList_Refreshing"
+                  RowHeight="75">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5" >
+                            <Frame CornerRadius="100" 
+                                   HeightRequest="50"
+                                   WidthRequest="50"
+                                   HorizontalOptions="Center"
+                                   Padding="0"
+                                   IsClippedToBounds="True"
+                                   >
+                                <Image Source="{Binding Avatar}"
+                                       HorizontalOptions="Fill"
+                                       VerticalOptions="Fill" 
+                                       Aspect="AspectFill"/>
+                            </Frame>
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Notification}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
