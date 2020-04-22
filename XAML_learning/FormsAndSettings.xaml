@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.FormsAndSettings">
+    <StackLayout HorizontalOptions="FillAndExpand">
+        
+        <Label Text="Switches" FontSize="Title"/>
+        <StackLayout Orientation="Horizontal">
+            <Switch IsToggled="True" 
+                Toggled="Switch_Toggled" 
+                HorizontalOptions="Start"/>
+            <Label Text="Content" x:Name="label"/>
+            <Switch IsToggled="True"
+                 x:Name="switch"
+                 HorizontalOptions="Start"/>
+            <Label Text="Content" 
+               IsVisible="{Binding Source={x:Reference switch}, Path=IsToggled}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout>
+                <Label Text="Sliders" 
+               FontSize="Title"/>
+                <Slider x:Name="slider"
+                    Maximum="255"
+                    Minimum="0"
+                    BackgroundColor="LightGray"
+                WidthRequest="160"/>
+        <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0}'}" HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+            <Label Text="Stepper" 
+               FontSize="Title"/>
+            <Stepper x:Name="stepper" 
+                 Increment="5" 
+                 Maximum="255" 
+                 Minimum="0"
+                 />
+        <Label Text="{Binding Source={x:Reference stepper}, Path=Value}" />
+            </StackLayout>
+        </StackLayout>
+    <Label Text="Entry and Editor" 
+               FontSize="Title"/>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="EntryLabel" />
+        <Entry Keyboard="Numeric" Placeholder="Phone" TextChanged="Entry_TextChanged" />
+        <Entry Keyboard="Default" IsPassword="True" Placeholder="Password" Completed="Entry_Completed"/>
+        <Label x:Name="EntryLabel2" />
+        </StackLayout>
+        <Editor BackgroundColor="Beige" VerticalOptions="FillAndExpand"/>
+
+    <Label Text="Pickers" 
+               FontSize="Title"/>
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="contactMethod" Title="Contact Method" BackgroundColor="AliceBlue" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>SMS</x:String>
+                <x:String>E-mail</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker x:Name="contactMethod2" Title="Contact Method" BackgroundColor="AliceBlue" SelectedIndexChanged="contactMethod2_SelectedIndexChanged" />
+        </StackLayout>
+        <Label Text="Date and Time" 
+               FontSize="Title"/>
+        <StackLayout Orientation="Horizontal">
+            <DatePicker Date="5 Jan 2020" Format="d MMM yyyy" MinimumDate="1 Jan 2016" MaximumDate="{x:Static sys:DateTime.Today}"/>
+            <TimePicker Time="13:00"/>
+        </StackLayout>
+
+        </StackLayout>
+</ContentPage>

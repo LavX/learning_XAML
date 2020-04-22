@@ -10,8 +10,8 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new InstagramApp.MainPage());
-            //MainPage = new InstagramApp.MainPage();
+            //MainPage = new NavigationPage(new InstagramApp.MainPage());
+            MainPage = new FormsAndSettings();
         }
 
         protected override void OnStart()
