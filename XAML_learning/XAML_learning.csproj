@@ -35,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CarouselPages\MainPage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="MasterDetailPages\ContactDetailPage.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

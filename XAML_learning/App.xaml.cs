@@ -11,7 +11,7 @@ namespace XAML_learning
             InitializeComponent();
 
             //MainPage = new NavigationPage (new MasterDetailPage.ContactsPage())
-            MainPage = new TabbedPages.MainPage();
+            MainPage = new CarouselPages.MainPage();
         }
 
         protected override void OnStart()
