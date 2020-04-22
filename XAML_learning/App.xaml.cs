@@ -10,8 +10,8 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage (new MasterDetailPage.ContactsPage())
-            MainPage = new Popups.MainPage();
+            MainPage = new NavigationPage(new ToolbarItems.MainPage());
+            //MainPage = new Popups.MainPage();
         }
 
         protected override void OnStart()
