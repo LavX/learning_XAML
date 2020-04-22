@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.TabbedPages.MainPage"
+            xmlns:local="clr-namespace:XAML_learning"
+            xmlns:hier="clr-namespace:XAML_learning.HierarchicalNavigation"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    <NavigationPage Title="Quotes">
+        <x:Arguments>
+            <local:QuotePage Title="Quotes"/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Hierarchical">
+        <x:Arguments>
+            <hier:WelcomePage Title="Welcome"/>
+        </x:Arguments>
+    </NavigationPage>
+
+    <ContentPage Title="Page1">
+        <Label Text="Content of Page 1" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </ContentPage>
+    <local:RecentSearchesList Title="Recent Searches"/>
+
+</TabbedPage>
