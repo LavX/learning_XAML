@@ -10,8 +10,8 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new InstagramApp.MainPage());
-            MainPage = new TableViewPage();
+            MainPage = new NavigationPage(new TableViewPage());
+            //MainPage = new TableViewPage();
         }
 
         protected override void OnStart()
