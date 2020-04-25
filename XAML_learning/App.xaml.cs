@@ -10,7 +10,7 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new TableViewPage());
+            MainPage = new NavigationPage(new ContactBook.MainPage());
             //MainPage = new TableViewPage();
         }
 

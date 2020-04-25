@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML_learning.ContactBook.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Order="Primary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="ContactList" 
+              HasUnevenRows="True"
+                  ItemSelected="ContactList_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding FullName}">
+                <TextCell.ContextActions>
+                        <MenuItem Text="Delete" Clicked="MenuItem_Clicked"  IsDestructive="True" CommandParameter="{Binding .}"/>
+                    </TextCell.ContextActions>
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
