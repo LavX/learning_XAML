@@ -13,7 +13,7 @@ namespace XAML_learning
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new DataAccess.AppProperties());
+            MainPage = new NavigationPage(new DataAccess.SqliteDatabase());
             //MainPage = new TableViewPage();
         }
 
